@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <div class="flex justify-between items-center py-4">
+            <div class="md:flex px-2 justify-center items-center cursor-pointer">
+                <p class="md:text-lg text-sm border-b-2 mx-2 text-green-900 border-green-900">Home</p>
+                <p class="md:text-lg text-sm border-b-2 mx-2">About</p>
+                <p class="md:text-lg text-sm border-b-2 mx-2">Contact</p>
+            </div>
+            <div class="flex justify-center items-center">
+                <div class="border p-2 rounded-md flex items-center">
+                    <i class="fa-solid fa-magnifying-glass px-2"></i>
+                    <input oninput="search(this.value)" type="text" class="outline-none w-full" placeholder="Search...">
+                </div>
+                <div class="px-4">
+                    <button onclick="sideBar()"
+                        class="border rounded-md px-5 py-2 w-full bg-green-800 text-white font-semibold">Basket</button>
+                    <div id="addBasket" class="max-w-[400px] w-full fixed top-0 right-[-100%] h-[100vh] bg-white">
+                        <div class="text-right p-5 ">
+                            <i onclick="sideBar()" class="fa-solid fa-xmark text-[25px] cursor-pointer"></i>
+                        </div>
+                        <div class="flex flex-col gap-2" id="wishlist">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="py-6 sm:py-12  dark:text-gray-800">
+            <div class="container p-6 mx-auto space-y-8">
+                <div id="cards" class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
